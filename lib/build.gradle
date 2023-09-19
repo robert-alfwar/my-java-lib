@@ -22,6 +22,24 @@ repositories {
 }
 
 publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+
+            pom {
+                // Metadata om ditt bibliotek
+                name = 'My Java Library'
+                description = 'A sample Java library for GitHub Package Registry demo'
+                url = 'https://github.com/robert-alfwar/my-java-lib'
+                licenses {
+                    license {
+                        name = 'MIT License'
+                        url = 'https://opensource.org/licenses/MIT'
+                    }
+                }
+            }
+        }
+    }
   repositories {
     maven {
       name = "GitHubPackages"
